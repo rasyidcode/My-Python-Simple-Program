@@ -11,7 +11,7 @@ watch|Watch the trending video by given number
 find|Find trending video by channel name
 
 ### Command Help
-base command : ```py youtube_trending.py --help```
+**base command** : ```py youtube_trending.py --help```
 ```
 Usage: youtube_trending.py [OPTIONS] COMMAND [ARGS]...
 
@@ -26,7 +26,7 @@ Commands:
   trending  Print out the current trending on youtube in table format.
   watch     Watch the trending video by it's number.
 ```
-detail command : ```py youtube_trending.py detail --help```
+**detail command** : ```py youtube_trending.py detail --help```
 ````
 Usage: youtube_trending.py detail [OPTIONS]
 
@@ -36,7 +36,7 @@ Options:
   -n, --number INTEGER  Number of the trending video.
   --help                Show this message and exit.
 ````
-find command : ```py youtube_trending.py find --help```
+**find command** : ```py youtube_trending.py find --help```
 ```
 Usage: youtube_trending.py find [OPTIONS]
 
@@ -46,7 +46,7 @@ Options:
   -c, --channel TEXT  Channel name to find.
   --help              Show this message and exit.
 ```
-trending command : ```py youtube_trending.py trending --help```
+**trending command** : ```py youtube_trending.py trending --help```
 ```
 Usage: youtube_trending.py trending [OPTIONS]
 
@@ -56,7 +56,7 @@ Options:
   -l, --limit INTEGER  Limit the trending video shows in the table.
   --help               Show this message and exit.
 ```
-watch command : ```py youtube_trending.py watch --help```
+**watch command** : ```py youtube_trending.py watch --help```
 ```
 Usage: youtube_trending.py watch [OPTIONS]
 
@@ -66,3 +66,12 @@ Options:
   -n, --number INTEGER  Number of the trending video.
   --help                Show this message and exit.
 ```
+### TODO Next
+- [x] Show trending list in table
+- [x] Show individual trending video by number
+- [x] Watch individual trending video by number
+- [x] Find individual trending video by channel name
+- [x] Put limit on trending list table
+- [ ] Add option on trending command to input --from and --to number
+- [ ] Store list data in database
+- [ ] Add datetime when this data trending list fetched
