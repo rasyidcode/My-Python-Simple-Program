@@ -19,7 +19,7 @@ get all trending list| ```py youtube_trending.py trending``` | Will return list 
 get only 5 trending list| ```py youtube_trending.py trending --limit 5``` | Will return list of 5 trending video in table format
 get trending detail by trending number| ```py youtube_trending.py detail --number 5``` | will return the detail of inserted number that user input
 watch a trending video by it's number| ```py youtube_trending.py watch --number 5``` | will open your default browser and play the video
-find a trending video by channel name | ```py youtube_trending.py find --channel "PewDiePie" | will return the detail of related channel
+find a trending video by channel name | ```py youtube_trending.py find --channel "PewDiePie"``` | will return the detail of related channel
 
 ### TODO Next
 - [x] Show trending list in table
