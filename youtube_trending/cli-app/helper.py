@@ -1,0 +1,21 @@
+from termcolor import cprint
+
+def print_detail(video):
+    cprint('Trending        :   ', 'yellow', end='#' + str(video['id'] + 1))
+    print('')
+    cprint('Title           :   ', 'yellow', end=video['title'])
+    print('')
+    cprint('Desc            :   ', 'yellow', end=video['desc'])
+    print('')
+    cprint('Channel         :   ', 'yellow', end=video['channel'])
+    print('')
+    cprint('Views           :   ', 'yellow', end=video['views'])
+    print('')
+    cprint('Uploaded        :   ', 'yellow', end=video['uploaded'])
+    print('')
+    cprint('Duration        :   ', 'yellow', end=video['duration'])
+    print('')
+    cprint('Image URL       :   ', 'yellow', end=video['image_url'])
+    print('')
+    cprint('Watch URL       :   ', 'yellow', end=video['watch_url'])
+    print('')

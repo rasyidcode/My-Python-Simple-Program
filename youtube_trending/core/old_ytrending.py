@@ -8,7 +8,7 @@ import webbrowser
 from termcolor import cprint
 
 
-class YoutubeTrending:
+class YTrending:
 
     def __init__(self):
         os.system('color')
@@ -141,48 +141,3 @@ class YoutubeTrending:
         print('')
         cprint('Watch URL       :   ', 'yellow', end=self.__watchUrl(row))
         print('')
-
-yt = YoutubeTrending()
-
-
-@click.group()
-def main():
-    """
-    simple program to check youtube current trending
-    """
-    pass
-
-
-@main.command(help='Print out the current trending on youtube in table format.')
-@click.option('--limit', '-l', default=0, help='Limit the trending video shows in the table.', type=int)
-def trending(limit):
-    yt.generate_table(limit)
-
-
-@main.command(help='Show individual youtube trending by it\'s number.')
-@click.option('--number', '-n', help='Number of the trending video.', type=int)
-def detail(number):
-    yt.trending_detail(number)
-
-
-@main.command(help='Watch the trending video by it\'s number.')
-@click.option('--number', '-n', help='Number of the trending video.', type=int)
-def watch(number):
-    yt.watch_trending(number)
-
-@main.command(help='Find what\'s trending.')
-@click.option('--channel', '-c', help='Channel name to find.', type=str)
-def find(channel):
-    result = yt.find_trending(channel)
-    if result != True:
-        cprint(channel, 'red', end=' currently is not in trending list right now.')
-    
-
-# @click.command()
-# @click.argument('name')
-# @click.option('--greeting', '-g')
-# def main(name, greeting):
-#     click.echo("{}, {}".format(greeting, name))
-
-if __name__ == "__main__":
-    main()
