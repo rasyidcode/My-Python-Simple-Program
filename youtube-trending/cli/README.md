@@ -34,3 +34,5 @@ find a trending video by channel name | ```py youtube_trending.py find --channel
 - [x] Views should return an integer
 <!-- - [ ] Uploaded should return a date -->
 - [ ] Create command to generate the list into json file
+- [ ] Put cron on this app
+- [ ] Upload the data to spreadsheet everyday at 9 a clock
