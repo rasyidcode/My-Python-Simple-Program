@@ -31,6 +31,6 @@ find a trending video by channel name | ```py youtube_trending.py find --channel
 - [ ] Store list data in database
 - [ ] Add datetime when this data trending list fetched
 - [x] Separete ytrending core and click cli-app
-- [ ] Views should return an integer
-- [ ] Uploaded should return a date
+- [x] Views should return an integer
+<!-- - [ ] Uploaded should return a date -->
 - [ ] Create command to generate the list into json file

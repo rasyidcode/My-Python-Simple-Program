@@ -1,5 +1,7 @@
 import bs4
 import requests
+# from datetime import datetime
+import datetime
 
 
 class YTrending:
@@ -89,10 +91,28 @@ class YTrending:
         return row.find('div', {'class': 'yt-lockup-byline'}).find('a').getText()
 
     def __views(self, row):
-        return row.find('ul', {'class': 'yt-lockup-meta-info'}).find_all('li')[1].getText().replace('x ditonton', '')
+        strViews = row.find('ul', {'class': 'yt-lockup-meta-info'}).find_all('li')[1].getText().replace('x ditonton', '').replace('.', '')
+        return int(strViews)
+        # return row.find('ul', {'class': 'yt-lockup-meta-info'}).find_all('li')[1].getText().replace('x ditonton', '')
 
     def __uploaded(self, row):
-        return row.find('ul', {'class': 'yt-lockup-meta-info'}).find_all('li')[0].getText()
+        uploaded = row.find('ul', {'class': 'yt-lockup-meta-info'}).find_all('li')[0].getText()
+        # now = datetime.datetime.now()
+
+        # number = 0
+
+        # for char in uploaded:
+        #     if char.isdigit():
+        #         number = int(char)
+
+        # if 'minggu' in uploaded:
+        #     days = 7 * number
+        #     result = now - datetime.timedelta(days=days)
+        # elif 'hari' in uploaded:
+        #     result = now - datetime.timedelta(days=number)
+        # elif 'jam' in uploaded:
+        #     result = now - datetime.timedelta(hours=number)
+        return uploaded
 
     def __duration(self, row):
         return row.find('span', {'class': 'accessible-description'}).getText().replace('- Durasi: ', '')[:-1].replace('.', ':')
@@ -101,4 +121,5 @@ class YTrending:
         return row.find('img').get('src')
 
     def __watch_url(self, row):
-        return 'https://www.youtube.com' + row.find('a', {'class': 'yt-uix-sessionlink'}).get('href')
+        video_path_uri = row.find('a', {'class': 'yt-uix-sessionlink'}).get('href')
+        return 'https://www.youtube.com' + video_path_uri

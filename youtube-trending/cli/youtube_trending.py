@@ -37,8 +37,8 @@ def trending(limit):
             '#' + str(video['id'] + 1),
             video['title'],
             video['channel'],
-            video['views'],
-            video['uploaded'],
+            Helper.to_juta_format(video['views']),
+            Helper.to_local_format(video['uploaded']),
             video['duration']
         ]
         table.add_row(row)
