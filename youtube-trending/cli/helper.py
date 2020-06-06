@@ -1,23 +1,23 @@
 from termcolor import cprint
 
 def print_detail(video):
-    cprint('Trending        :   ', 'yellow', end='#' + str(video['id'] + 1))
+    cprint('Trending        :   ', 'yellow', end='#' + str(video['num_trending']))
     print('')
     cprint('Title           :   ', 'yellow', end=video['title'])
     print('')
-    cprint('Desc            :   ', 'yellow', end=video['desc'])
+    cprint('Desc            :   ', 'yellow', end=video['description'])
     print('')
     cprint('Channel         :   ', 'yellow', end=video['channel'])
     print('')
-    cprint('Views           :   ', 'yellow', end=video['views'])
+    cprint('Views           :   ', 'yellow', end=str(to_juta_format(video['views'])))
     print('')
     cprint('Uploaded        :   ', 'yellow', end=video['uploaded'])
     print('')
-    cprint('Duration        :   ', 'yellow', end=video['duration'])
+    cprint('Duration        :   ', 'yellow', end=video['duration'].strip())
     print('')
     cprint('Image URL       :   ', 'yellow', end=video['image_url'])
     print('')
-    cprint('Watch URL       :   ', 'yellow', end=video['watch_url'])
+    cprint('Watch URL       :   ', 'yellow', end='https://www.youtube.com/watch?v=' + video['video_id'])
     print('')
 
 def to_local_format(timestamp):

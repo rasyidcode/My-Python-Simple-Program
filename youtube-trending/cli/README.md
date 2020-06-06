@@ -27,12 +27,14 @@ find a trending video by channel name | ```py youtube_trending.py find --channel
 - [x] Watch individual trending video by number
 - [x] Find individual trending video by channel name
 - [x] Put limit on trending list table
-- [ ] Add option on trending command to input --from and --to number
-- [ ] Store list data in database
-- [ ] Add datetime when this data trending list fetched
+- [x] Add option on trending command to input --start
+- [x] Store list data in database
+- [x] Add datetime when this data trending list fetched
 - [x] Separete ytrending core and click cli-app
 - [x] Views should return an integer
-<!-- - [ ] Uploaded should return a date -->
-- [ ] Create command to generate the list into json file
+- [ ] Create command to generate the list into JSON|CSV|XLS|XLSX|HTML|XML|YAML file
 - [ ] Put cron on this app
 - [ ] Upload the data to spreadsheet everyday at 9 a clock
+- [ ] add refresh command
+<!-- - [ ] Uploaded should return a date -->
+<!-- - [ ] Add option on trending command to input --from and --to number -->
