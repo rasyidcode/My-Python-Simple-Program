@@ -3,6 +3,7 @@ import requests
 # from datetime import datetime
 import datetime
 import mysql.connector
+import time
 
 
 class YTrending:
@@ -21,6 +22,11 @@ class YTrending:
         if self.__mydb != None:
             if self.__res.status_code == 200:
                 soup = bs4.BeautifulSoup(self.__res.text, 'html.parser')
+
+                f = open('./testyoutube.html', 'w', encoding="utf-8")
+                f.write(soup.prettify())
+                f.close()
+                return
 
                 raw_data = soup.find_all('li', {'class': 'expanded-shelf-content-item-wrapper'})
 
@@ -80,7 +86,8 @@ class YTrending:
                     number += 1
 
                 if not raw_data:
-                    print("something error occured.")
+                    print(len(raw_data))
+                    # print("something error occured.")
             else:
                 print("Error fetching data")
         else:
@@ -90,13 +97,16 @@ class YTrending:
         self.__mydb = None
         self.__res = requests.get('https://www.youtube.com/feed/trending')
 
+        time.sleep(5)
+
+        print(self.__res.text)
+        return
+
     # def number_of_video(self):
     #     return self.__number_of_video
 
     def get_all(self):
         if self.__mydb != None:
-            today_trending_query = ""
-
             current_date = self.__current_date()
 
             get_all_query = "SELECT * FROM " + self.__table_name + " WHERE trending_date = %s"
